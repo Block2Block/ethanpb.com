@@ -1,0 +1,86 @@
+/* Timeline.css */
+
+.timeline {
+  position: relative;
+  margin: 50px auto; /* Centers the timeline container */
+  padding: 0 20px;
+  list-style: none;
+  max-width: 100%;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0; /* Ensure no additional spacing after the last item */
+}
+
+.timeline-item:before {
+  content: '';
+  position: absolute;
+  left: 5%; /* Or your adjusted value for centering */
+  transform: translateX(-50%);
+  width: 2px; /* Thickness of the vertical line */
+  height: calc(100% + 50px); /* Extends beyond the item, accounting for margin */
+  background: #ddd; /* Line color */
+  z-index: -1; /* Behind the dots */
+  top: 0;
+}
+
+
+.timeline-item:first-child:before {
+  top: 50%; /* Start the line halfway down the first item */
+}
+
+.timeline-item:last-child:before {
+  height: 50%; /* Stop the line halfway up the last item */
+}
+
+.timeline-dot {
+  position: relative;
+  left: 5%; /* Keeps the dot aligned with the timeline line */
+  transform: translate(-50%, -50%);
+  width: 30px; /* Increased width of the dot */
+  height: 30px; /* Increased height of the dot */
+  border-radius: 50%;
+  background-color: white; /* Keeps the dot's background white */
+  border: 2px solid #ddd; /* Border color matches the timeline line */
+  display: flex;
+  justify-content: center; /* Centers the icon horizontally */
+  align-items: center; /* Centers the icon vertically */
+  z-index: 1;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.15); /* Optional shadow for visual effect */
+}
+
+.timeline-dot i {
+  color: #0078d4; /* The color of the FontAwesome icon */
+  font-size: 15px; /* Adjusted font size to be proportional to the larger dot */
+}
+
+
+/* Specific FontAwesome icon styling (optional) */
+.timeline-dot i:before {
+  display: inline-block;
+  font-weight: bold;
+}
+
+
+.timeline-content {
+  position: relative;
+  width: 90%; /* Keeps the content size proportional */
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 5%; /* Center the content relative to the screen width */
+  left: 0;
+}
+
+.fs-3 {
+  font-size: 1.1rem;
+}
